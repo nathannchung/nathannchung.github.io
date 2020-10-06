@@ -3,7 +3,7 @@
 /* General instructions for font, color, and background image */
 body {
     font-family: Skia, Ariel, Futura, Verdana;
-    color: #344152;
+    color: #9dddd5;
     margin: 50px;
     background: #FBFBEF;
 }
@@ -21,7 +21,7 @@ h2 {
     font-family: Skia, Futura, Verdana, Ariel;
     color: #344152;
     font-size: 6em;
-    margin: 0;
+    margin: auto;
     padding: 0.1em;
     padding-left: 1em;
     text-align: center;
@@ -32,7 +32,7 @@ h6 {
     font-family: Skia, Futura, Verdana, Ariel;
     color: #344152;
     font-size: 0.75em;
-    margin: 0;
+    margin: auto;
     padding: 0.1em;
     padding-left: 1em;
     text-align: center;
@@ -72,16 +72,16 @@ a:visited {
 #content {
     padding: 10px;
     float: right;
-    text-align: left;
+    text-align: center;
     font-size: 12pt;
-    margin: 0 0 1em 1em;
+    margin: auto;
 }
 
 /* Margins and alignment for images in the content division */
 #content img {
     padding: 1px;
     float: right;
-    margin: 0 0 1em 1em;
+    margin: auto;
 }
 
 /* Layout for alignment of footer */
