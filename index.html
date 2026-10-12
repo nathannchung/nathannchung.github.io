@@ -11,21 +11,119 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"
     type="text/css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap">
   <link rel="stylesheet" href="css/style.css" />
   <script type="text/javascript" src="js/jquery.particleground.js"></script>
   <script type="text/javascript" src="js/demo.js"></script>
+
+  <!-- These rules come after style.css on purpose so they take priority. -->
   <style>
-    #intro .bio { max-width: 640px; margin: 2em auto; text-align: center; line-height: 1.6; }
-    #intro .bio p { margin: 0 0 1em; }
-    #intro .links a { color: white; font-size: 2em; margin: 0 0.3em; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-weight: 300;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Particle background fills the screen and stays behind the content. */
+    #particles {
+      position: fixed !important;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 0;
+    }
+
+    /* Content is centered with flexbox instead of the demo's absolute
+       positioning, so it scales to any screen and never gets cut off. */
+    #intro {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      margin: 0 auto !important;
+      z-index: 1;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 48px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #intro h1 {
+      margin: 0 0 0.15em;
+      font-size: clamp(2.25rem, 7vw, 4rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    #intro .tagline {
+      margin: 0 0 1.75em;
+      font-size: clamp(1rem, 2.6vw, 1.3rem);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    #intro .bio {
+      max-width: 42rem;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      line-height: 1.7;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    }
+
+    #intro .bio p {
+      margin: 0 0 1.1em;
+    }
+
+    #intro .links {
+      margin-top: 1.25em;
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #intro .links a {
+      color: #fff;
+      font-size: 1.9rem;
+      opacity: 0.9;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    #intro .links a:hover,
+    #intro .links a:focus-visible {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+      #intro { padding: 32px 16px; }
+      #intro .links a { font-size: 1.6rem; }
+    }
   </style>
 </head>
 
 <body>
   <div id="particles"></div>
-  <div id="intro">
+  <main id="intro">
     <h1>Nathan Chung</h1>
+    <p class="tagline">Cloud Engineer</p>
 
     <div class="bio">
       <p>
@@ -58,6 +156,6 @@
       <a href="Nathan-Chung-2026Resumee.pdf" aria-label="Resume (PDF)">
         <i class="fas fa-file-pdf" aria-hidden="true"></i></a>
     </nav>
-  </div>
+  </main>
 </body>
 </html>
